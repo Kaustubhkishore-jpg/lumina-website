@@ -103,7 +103,14 @@ ul {
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
+@media (max-width: 768px)
+.download-pill {
+  top: 15px;
+  left: 15px;
+  font-size: 0.8rem;
+  padding: 8px 14px;
+}
+{
   .hero h1 { font-size: 3rem; }
   .section { padding: 80px 8%; }
   .stats { flex-direction: column; gap: 30px; }
@@ -138,4 +145,5 @@ ul {
     0 0 30px rgba(120,200,255,0.35);
   transform: translateY(-2px);
 }
+
 
