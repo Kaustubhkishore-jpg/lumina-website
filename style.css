@@ -1,0 +1,240 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0b0b0b;
+  color: #eaeaea;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(120,200,255,0.18),
+    transparent 70%
+  );
+  filter: blur(120px);
+  z-index: -1;
+}
+
+.hero.small {
+  height: 60vh;
+}
+
+.hero h1 {
+  font-size: 4.5rem;
+  letter-spacing: 4px;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+
+.hero span {
+  margin-top: 15px;
+  opacity: 0.7;
+}
+
+.section {
+  padding: 120px 15%;
+}
+
+.section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+}
+
+.section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.85;
+}
+
+.dark {
+  background: #111;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.grid div {
+  background: #151515;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+.cards div {
+  background: #151515;
+  padding: 25px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.stats {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  text-align: center;
+}
+
+.stats div {
+  font-size: 2rem;
+}
+
+.stats span {
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+blockquote {
+  margin-top: 20px;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+footer {
+  padding: 40px;
+  text-align: center;
+  opacity: 0.5;
+}
+/* ===== APPLE-STYLE GLOW EFFECTS ===== */
+
+/* Glow for main brand text */
+.hero h1 {
+  text-shadow:
+    0 0 20px rgba(255, 255, 255, 0.15),
+    0 0 40px rgba(255, 255, 255, 0.08);
+}
+
+/* Soft glow on hover (luxury feel) */
+.hero h1:hover {
+  text-shadow:
+    0 0 25px rgba(255, 255, 255, 0.25),
+    0 0 60px rgba(120, 200, 255, 0.15);
+  transition: 0.4s ease;
+}
+
+/* Glow cards */
+.cards div,
+.grid div {
+  box-shadow: 0 0 0 rgba(255,255,255,0);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.cards div:hover,
+.grid div:hover {
+  box-shadow:
+    0 0 25px rgba(120, 200, 255, 0.15),
+    0 0 50px rgba(120, 200, 255, 0.08);
+  transform: translateY(-6px);
+}
+
+/* Section heading glow */
+.section h2 {
+  text-shadow: 0 0 15px rgba(255,255,255,0.08);
+}
+
+/* Market numbers glow */
+.stats div {
+  text-shadow:
+    0 0 20px rgba(120, 200, 255, 0.25);
+}
+
+/* Quote glow */
+blockquote {
+  border-left: 3px solid rgba(120,200,255,0.4);
+  padding-left: 15px;
+  box-shadow: inset 0 0 10px rgba(120,200,255,0.05);
+}
+/* ===== MOBILE RESPONSIVE (APPLE-STYLE) ===== */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    letter-spacing: 3px;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .hero span {
+    font-size: 0.9rem;
+  }
+
+  /* SECTIONS */
+  .section {
+    padding: 80px 8%;
+  }
+
+  .section h2 {
+    font-size: 1.6rem;
+  }
+
+  .section p {
+    font-size: 1rem;
+  }
+
+  /* GRIDS & CARDS */
+  .grid,
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .cards div,
+  .grid div {
+    padding: 20px;
+  }
+
+  /* STATS */
+  .stats {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .stats div {
+    font-size: 1.6rem;
+  }
+
+  /* BLOCKQUOTE */
+  blockquote {
+    font-size: 0.95rem;
+  }
+
+  /* FOOTER */
+  footer {
+    font-size: 0.85rem;
+  }
+}
+
