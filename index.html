@@ -238,8 +238,41 @@
 <script>
   AOS.init({ duration: 1200, once: true });
 </script>
+<script>
+  const prices = document.querySelectorAll(".price");
 
+  const animatePrice = (el) => {
+    const target = +el.getAttribute("data-price");
+    let current = 0;
+    const increment = target / 80;
+
+    const counter = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        el.innerText = "₹" + target.toLocaleString("en-IN");
+        clearInterval(counter);
+      } else {
+        el.innerText = "₹" + Math.floor(current).toLocaleString("en-IN");
+      }
+    }, 20);
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animatePrice(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.6 }
+  );
+
+  prices.forEach(price => observer.observe(price));
+</script>
 </body>
 </html>
+
 
 
