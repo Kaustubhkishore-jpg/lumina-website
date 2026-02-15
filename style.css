@@ -104,6 +104,11 @@ ul {
 
 /* MOBILE */
 @media (max-width: 768px)
+.cards div {
+  transform: scale(1);
+  box-shadow:
+    0 0 25px rgba(120,200,255,0.18);
+}
 .pricing-grid {
   grid-template-columns: 1fr;
 }
@@ -219,6 +224,57 @@ ul {
   transform: translateY(-3px);
   box-shadow: 0 0 40px rgba(120,200,255,0.55);
 }
+/* ===== LUMINA INTELLIGENT SOLUTIONS ANIMATION ===== */
+
+/* Base card animation setup */
+.cards div {
+  position: relative;
+  overflow: hidden;
+  transform: translateY(10px) scale(0.98);
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+/* Hover / Touch lift */
+.cards div:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow:
+    0 0 35px rgba(120,200,255,0.25),
+    0 0 60px rgba(120,200,255,0.15);
+}
+
+/* Subtle animated glow layer */
+.cards div::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(
+    circle,
+    rgba(120,200,255,0.25),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Glow appears on interaction */
+.cards div:hover::before {
+  opacity: 1;
+}
+
+/* Soft idle pulse (luxury breathing effect) */
+.cards div {
+  animation: solutionPulse 8s ease-in-out infinite;
+}
+
+/* Pulse animation */
+@keyframes solutionPulse {
+  0% { box-shadow: 0 0 0 rgba(120,200,255,0); }
+  50% { box-shadow: 0 0 20px rgba(120,200,255,0.12); }
+  100% { box-shadow: 0 0 0 rgba(120,200,255,0); }
+}
+
 
 
 
