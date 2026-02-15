@@ -195,6 +195,31 @@ ul {
   border: 1px solid rgba(120,200,255,0.6);
   box-shadow: 0 0 40px rgba(120,200,255,0.35);
 }
+/* ===== CTA BUTTON ===== */
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    rgba(120,200,255,0.35),
+    rgba(120,200,255,0.15)
+  );
+
+  box-shadow: 0 0 25px rgba(120,200,255,0.35);
+  transition: all 0.35s ease;
+}
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 40px rgba(120,200,255,0.55);
+}
+
 
 
 
