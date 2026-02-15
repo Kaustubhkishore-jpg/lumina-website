@@ -326,9 +326,41 @@ ul {
     transform: translate(0, 0);
   }
 }
+/* ===== HERO BACKGROUND BASED ON LUMINA REPORT ===== */
 
+.hero {
+  background: radial-gradient(
+      circle at 50% 40%,
+      rgba(120, 200, 255, 0.18),
+      transparent 55%
+    ),
+    linear-gradient(
+      180deg,
+      #0b0b0b 0%,
+      #0e0e0e 50%,
+      #0b0b0b 100%
+    );
+  position: relative;
+  overflow: hidden;
+}
 
+/* Intelligent light movement */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(
+    circle,
+    rgba(120,200,255,0.22),
+    transparent 60%
+  );
+  filter: blur(140px);
+  animation: luminaLight 20s ease-in-out infinite;
+  z-index: -1;
+}
 
-
-
-
+@keyframes luminaLight {
+  0%   { transform: translate(-5%, -5%); }
+  50%  { transform: translate(5%, 5%); }
+  100% { transform: translate(-5%, -5%); }
+}
