@@ -104,6 +104,9 @@ ul {
 
 /* MOBILE */
 @media (max-width: 768px)
+.pricing-grid {
+  grid-template-columns: 1fr;
+}
 .download-pill {
   top: 15px;
   left: 15px;
@@ -145,5 +148,53 @@ ul {
     0 0 30px rgba(120,200,255,0.35);
   transform: translateY(-2px);
 }
+/* ===== PRODUCT LINE PRICING BOXES ===== */
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.price-box {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 35px 25px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+
+  transition: all 0.35s ease;
+}
+
+.price-box h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.price-box .price {
+  font-size: 2rem;
+  margin: 15px 0;
+  color: #9fd6ff;
+}
+
+.price-box span {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* Hover luxury lift */
+.price-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 35px rgba(120,200,255,0.25);
+}
+
+/* Highlight premium tier */
+.price-box.highlight {
+  border: 1px solid rgba(120,200,255,0.6);
+  box-shadow: 0 0 40px rgba(120,200,255,0.35);
+}
+
 
 
